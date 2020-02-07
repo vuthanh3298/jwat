@@ -23,14 +23,7 @@ public class HomeController {
 	SessionFactory sessionFactory;
 	
 	@GetMapping ("/")
-	@Transactional
 	public String index() {
-		Session session = sessionFactory.getCurrentSession();
-		String sql = "from roles";
-		List<Roles> roles = session.createQuery(sql).getResultList();
-		for(Roles role : roles) {
-			System.out.println(role.getDislayName());
-		}
 		return "home";
 	}
 }
