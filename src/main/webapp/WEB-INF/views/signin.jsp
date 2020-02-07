@@ -24,10 +24,19 @@
 				<div>
 					<form class="form-inline my-2 my-lg-0" action="/jwat/dangnhap"
 						method="post">
-						<input name="email" class="form-control mr-sm-2" type="email"
-							placeholder="Email" aria-label="Email"> <input
+						<c:choose>
+							<c:when test="${email != null }">
+								<input name="email" class="form-control mr-sm-2" type="email"
+									placeholder="Email" aria-label="Email" value="${email}"/> 
+							</c:when>
+							<c:otherwise>
+								<input name="email" class="form-control mr-sm-2" type="email"
+									placeholder="Email" aria-label="Email" /> 
+							</c:otherwise>
+						</c:choose>
+						<input
 							name="password" class="form-control mr-sm-2" type="password"
-							placeholder="Password" aria-label="Password">
+							placeholder="Password" aria-label="Password" />
 						<button class="btn btn-primary" type="submit">Đăng nhập</button>
 					</form>
 					<c:if test="${result == 'false'}">
@@ -51,7 +60,7 @@
 					<div id="login-text-dangki">
 						<span class="font-text-dangki"> ĐĂNG KÝ </span>
 					</div>
-					<form  action="/jwat/dangky" method="post">
+					<form action="/jwat/dangky" method="post">
 						<div>
 							<table style="width: 100%" class="table-responsive">
 								<tr>
@@ -60,11 +69,11 @@
 								</tr>
 								<tr>
 									<td class="text-align-right font-text-dangki">Emai:</td>
-									<td><input type="text" name="email" /></td>
+									<td><input type="email" name="email" /></td>
 								</tr>
 								<tr>
 									<td class="text-align-right font-text-dangki">Password:</td>
-									<td><input type="text" name="password" /></td>
+									<td><input type="password" name="password" /></td>
 								</tr>
 								<tr>
 									<td class="text-align-right font-text-dangki">Ngày sinh:</td>

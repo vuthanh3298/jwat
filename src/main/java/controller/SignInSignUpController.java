@@ -1,6 +1,8 @@
 package controller;
 
 
+import java.sql.Date;
+
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import entity.Users;
+import service.UserService;
 
 
 
@@ -22,7 +25,7 @@ import entity.Users;
 public class SignInSignUpController {
 	
 	@Autowired
-	SessionFactory sessionFactory;
+	UserService userService;
 	
 	
 	@GetMapping("/dangnhap")
@@ -31,32 +34,31 @@ public class SignInSignUpController {
 	}
 	
 	@PostMapping("/dangnhap")
-	@Transactional
 	public String xuLyDangNhap(@RequestParam String email, @RequestParam String password, ModelMap modelMap) {
-		try {
-			Session session = sessionFactory.getCurrentSession();
-			String sql = "from users where email= :email and password= :password";
-			Query query = session.createQuery(sql);
-			query.setParameter("email", email);
-			query.setParameter("password", password);
-			Users user = (Users) query.getSingleResult();
-			if(user != null) {
-				System.out.println(user.getUsername());
-				modelMap.addAttribute("result", "true");
-				return "redirect:/";
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		if(userService.checkLogin(email, password)) {
+			modelMap.addAttribute("result", "true");
+			return "redirect:/";
+		} else {
+			modelMap.addAttribute("email", email);
+			modelMap.addAttribute("result", "false");
+			return "signin";
 		}
-		modelMap.addAttribute("result", "false");
-		return "signin";
 	}
 	
 	@PostMapping("/dangky")
-	public String xuLyDangKy(@ModelAttribute Users user) {
-		
-		
-		System.out.println("chạy vào đăng kí");
-		return "redirect:/";
+	@Transactional
+	public String xuLyDangKy(@RequestParam String username, @RequestParam String email, @RequestParam String password, @RequestParam Date dob, @RequestParam String university, @RequestParam String avatar) {
+		Users user = new Users();
+		user.setUsername(username);
+		user.setEmail(email);
+		user.setPassword(password);
+		user.setDob(dob);
+		user.setUniversity(university);
+		user.setAvatar(avatar);
+		user.setActive(false);
+		if(userService.insertUser(user))
+			return "redirect:/";
+		else
+			return "signin";
 	}
 }

@@ -29,7 +29,7 @@ public class Users implements java.io.Serializable {
 	private String password;
 	private Date dob;
 	private String university;
-	private String active;
+	private boolean active;
 	private String avatar;
 	private Set<Lesson> lessons = new HashSet<Lesson>(0);
 	private Set<Roles> roleses = new HashSet<Roles>(0);
@@ -42,7 +42,7 @@ public class Users implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Users(int id, String username, String email, String password, Date dob, String university, String active,
+	public Users(int id, String username, String email, String password, Date dob, String university, boolean active,
 			String avatar, Set<Lesson> lessons, Set<Roles> roleses, Set<Registration> registrations) {
 		this.id = id;
 		this.username = username;
@@ -115,11 +115,11 @@ public class Users implements java.io.Serializable {
 	}
 
 	@Column(name = "active", length = 100)
-	public String getActive() {
+	public boolean getActive() {
 		return this.active;
 	}
 
-	public void setActive(String active) {
+	public void setActive(boolean active) {
 		this.active = active;
 	}
 
