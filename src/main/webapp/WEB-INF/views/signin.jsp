@@ -8,27 +8,90 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Quản lý JWAT</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-expanded="false"
-			aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+<body id="login">
+	<div>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light myNavbar">
+			<a class="navbar-brand" href="#">JWAT</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				</ul>
+				<div>
+					<form class="form-inline my-2 my-lg-0" action="/jwat/dangnhap"
+						method="post">
+						<input name="email" class="form-control mr-sm-2" type="email"
+							placeholder="Email" aria-label="Email"> <input
+							name="password" class="form-control mr-sm-2" type="password"
+							placeholder="Password" aria-label="Password">
+						<button class="btn btn-primary" type="submit">Đăng nhập</button>
+					</form>
+					<c:if test="${result == 'false'}">
+						<div style="color: red; width: 100%; margin-top: 5px">
+							<span>Email hoặc password chưa đúng!</span>
+						</div>
+					</c:if>
+				</div>
+			</div>
+		</nav>
+	</div>
 
-		<div class="collapse navbar-collapse nav navbar-nav navbar-right" id="navbarSupportedContent">
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="text"
-					placeholder="Email" aria-label="Email">
-				<input class="form-control mr-sm-2" type="password"
-					placeholder="Password" aria-label="Password">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Đăng nhập</button>
-			</form>
+	<div id="login-div-content" class="container-fluid">
+		<div class="row" style="height: 100%">
+			<div class="col-md-8">
+				<div id="login-div-gioithieu">giới thiệu</div>
+			</div>
+
+			<div class="col-md-4 col-sm-12">
+				<div id="login-div-dangki">
+					<div id="login-text-dangki">
+						<span class="font-text-dangki"> ĐĂNG KÝ </span>
+					</div>
+					<form  action="/jwat/dangky" method="post">
+						<div>
+							<table style="width: 100%" class="table-responsive">
+								<tr>
+									<td class="text-align-right font-text-dangki">Tên:</td>
+									<td><input type="text" name="username" /></td>
+								</tr>
+								<tr>
+									<td class="text-align-right font-text-dangki">Emai:</td>
+									<td><input type="text" name="email" /></td>
+								</tr>
+								<tr>
+									<td class="text-align-right font-text-dangki">Password:</td>
+									<td><input type="text" name="password" /></td>
+								</tr>
+								<tr>
+									<td class="text-align-right font-text-dangki">Ngày sinh:</td>
+									<td><input type="date" name="dob" /></td>
+								</tr>
+								<tr>
+									<td class="text-align-right font-text-dangki">Trường:</td>
+									<td><input type="text" name="university" /></td>
+								</tr>
+								<tr>
+									<td class="text-align-right font-text-dangki">Avatar:</td>
+									<td><input type="file" name="avatar"></td>
+								</tr>
+							</table>
+						</div>
+
+						<div id="div-btn-dang-ky">
+							<button id="btnDangKy" class="btn btn-primary font-text-dangki"
+								type="submit">Đăng kí</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
 		</div>
-	</nav>
-	
+	</div>
+
 	<jsp:include page="footer.jsp" />
 </body>
 </html>
