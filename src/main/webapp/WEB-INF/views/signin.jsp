@@ -60,7 +60,54 @@
 					<div id="login-text-dangki">
 						<span class="font-text-dangki"> ĐĂNG KÝ </span>
 					</div>
-					<form action="/jwat/dangky" method="post">
+					
+					<c:choose>
+						<c:when test="${user != null}">
+							<form action="/jwat/dangky" method="post">
+								<div>
+									<table style="width: 100%" class="table-responsive">
+										<tr>
+											<td class="text-align-right font-text-dangki">Tên:</td>
+											<td><input type="text" name="username" value="${user.getUsername()}"/></td>
+										</tr>
+										<tr>
+											<td class="text-align-right font-text-dangki">Emai:</td>
+											<td><input type="email" name="email" value="${user.getEmail()}"/></td>
+										</tr>
+										<c:if test="${taiKhoanTonTai == 'true'}">
+											<tr>
+												<td></td>
+												<td><span style="color:red;">Email đã tồn tại</span></td>
+											</tr>
+										</c:if>
+										<tr>
+											<td class="text-align-right font-text-dangki">Password:</td>
+											<td><input type="password" name="password" /></td>
+										</tr>
+										<tr>
+											<td class="text-align-right font-text-dangki">Ngày sinh:</td>
+											<td><input type="date" name="dob" value="${user.getDob()}"/></td>
+										</tr>
+										<tr>
+											<td class="text-align-right font-text-dangki">Trường:</td>
+											<td><input type="text" name="university" value="${user.getUniversity()}"/></td>
+										</tr>
+										<tr>
+											<td class="text-align-right font-text-dangki">Avatar:</td>
+											<td><input type="file" name="avatar" value="${user.getAvatar()}"></td>
+										</tr>
+									</table>
+								</div>
+		
+								<div id="div-btn-dang-ky">
+									<button id="btnDangKy" class="btn btn-primary font-text-dangki"
+										type="submit">Đăng kí</button>
+								</div>
+							</form>
+						</c:when>
+						
+						<c:otherwise>
+							<form action="/jwat/dangky" method="post">
 						<div>
 							<table style="width: 100%" class="table-responsive">
 								<tr>
@@ -71,6 +118,12 @@
 									<td class="text-align-right font-text-dangki">Emai:</td>
 									<td><input type="email" name="email" /></td>
 								</tr>
+								<c:if test="${taiKhoanTonTai == 'true'}">
+									<tr>
+										<td></td>
+										<td><span style="color:red;">Email đã tồn tại</span></td>
+									</tr>
+								</c:if>
 								<tr>
 									<td class="text-align-right font-text-dangki">Password:</td>
 									<td><input type="password" name="password" /></td>
@@ -95,6 +148,10 @@
 								type="submit">Đăng kí</button>
 						</div>
 					</form>
+						</c:otherwise>
+					</c:choose>
+					
+					
 
 				</div>
 			</div>

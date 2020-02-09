@@ -43,6 +43,16 @@ html, body {
 	font-size: 20px;
 }
 
+.div-dangki input[type="text"], input[type="date"], input[type="email"], input[type="password"]{
+	background: white;
+	width: 100%;
+	border: 1px solid #C4C4C4;
+    border-radius: 4px;
+    font-family: Sarabun;
+	font-weight: 300;
+	font-size: 20px;
+}
+
 #login-text-dangki {
 	background: #C4C4C4;
 	text-align: center;

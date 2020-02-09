@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.ArrayList;
+
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
@@ -41,9 +43,95 @@ public class UserDAO implements UserImp{
 	@Transactional
 	public boolean insertUser(Users user) {
 		Session session = sessionFactory.getCurrentSession();
-		Integer id = (Integer) session.save(user);
+		String id = (String) session.save(user);
 		if(id != null) return true;
 		return false;
 	}
+
+	@Transactional
+	public ArrayList<Users> getAllUserActive() {
+		Session session = sessionFactory.getCurrentSession();
+		String sql = "from users where active = 1";
+		ArrayList<Users> users = (ArrayList<Users>) session.createQuery(sql).getResultList();
+		return users;
+	}
 	
+	@Transactional
+	public ArrayList<Users> getUserChoDuyet() {
+		Session session = sessionFactory.getCurrentSession();
+		String sql = "from users where active = 0";
+		ArrayList<Users> users = (ArrayList<Users>) session.createQuery(sql).getResultList();
+		return users;
+	}
+
+	@Transactional
+	public boolean deleteUser(String id) {
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			Users user = session.get(Users.class, id);
+			session.delete(user);
+			return true;
+		} catch (Exception e) {
+			System.out.println("Xoá user thất bại");
+		}
+		return false;
+	}
+
+	@Transactional
+	public boolean duyetUser(String id) {
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			Users user = session.get(Users.class, id);
+			user.setActive(true);
+			session.update(user);
+			return true;
+		} catch (Exception e) {
+			System.out.println("Delete user thất bại");
+		}
+		return false;
+	}
+
+	@Transactional
+	public boolean updateUser(Users user) {
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			String id = user.getEmail();
+			Users user2 = session.get(Users.class, id);
+			user2.setUsername(user.getUsername());
+			user2.setAvatar(user.getAvatar());
+			user2.setDob(user.getDob());
+			user2.setUniversity(user.getUniversity());
+			session.update(user2);
+			return true;
+		} catch (Exception e) {
+			System.out.println("Update user thất bại");
+		}
+		return false;
+	}
+
+	@Transactional
+	public int getSoTaiKhoanChoDuyet() {
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			int sum = (Integer) session.createQuery("select count(1) form users where active = 0").getSingleResult();
+			return sum;
+		} catch (Exception e) {
+			System.out.println("lỗi ở user chờ duyệt");
+		}
+		return -1;
+	}
+	
+	@Transactional
+	public boolean kiemTraTaiKhoanTonTai(String id) {
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			Users user = (Users) session.get(Users.class, id);
+			if(user != null) {
+				return true;
+			}
+		} catch (Exception e) {
+			System.out.println("lỗi ở user chờ duyệt");
+		}
+		return false;
+	}
 }

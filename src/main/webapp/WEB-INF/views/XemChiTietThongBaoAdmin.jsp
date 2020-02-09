@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<div>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light myNavbar">
 			<a class="navbar-brand" href="#">JWAT</a>
@@ -54,14 +55,13 @@
 			<div class="col-md-7"></div>
 			<div class="col-md-5" id="marginBottomTopRight10">
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-4">
 
 						
 					</div>
 
-					<div class="col-md-4">
-						<button type="button" class="btn btn-outline-danger">Thêm
-							tài khoản mới</button>
+					<div class="col-md-8">
+						
 					</div>
 				</div>
 
@@ -89,19 +89,21 @@
 					<li
 						class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
 						<div>
-							<a href="/jwat/xemthongtindangkylich" style="color: black;">XEM THÔNG TIN ĐĂNG KÝ LỊCH</a>
+							<a href="/jwat/soanlich" style="color: black;">SOẠN THỜI KHOÁ BIỂU</a>
 						</div>
 					</li>
 					<li
 						class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
 						<div>
-							<a href="/jwat/themtaikhoanmoi" style="color: black;">THÊM TÀI KHOẢN MỚI</a>
+							<a href="/jwat/xemthongtindangkylich" style="color: black;">XEM
+								THÔNG TIN ĐĂNG KÝ LỊCH</a>
 						</div>
 					</li>
 					<li
 						class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
 						<div>
-							<a href="/jwat/taikhoanchoduyet" style="color: black;">TÀI KHOẢN CHỜ DUYỆT</a>
+							<a href="/jwat/taikhoanchoduyet" style="color: black;">TÀI
+								KHOẢN CHỜ DUYỆT</a>
 						</div>
 					</li>
 					<li
@@ -122,74 +124,110 @@
 
 
 
-
 			<div class="col-md-10">
-
-				<div class="textCenterUppercase" id="marginBottomTopRight10">
-					<span style="font-size: 24px">THÊM TÀI KHOẢN MỚI</span>
-				</div>
+				<div class="row">
 
 
-				<div style="text-align: center;width: 100%">
-					<div id="login-div-content" class="container-fluid">
-		<div class="row" style="height: 100%">
-			<div class="col-md-3">
-				
-			</div>
+					<div class="col-md-12">
 
-			<div class="col-md-5 col-sm-12">
-				<div id="login-div-dangki">
-					
-					<form action="/jwat/dangky" method="post">
-						<div>
-							<table style="width: 100%" class="table-responsive">
-								<tr>
-									<td class="text-align-right font-text-dangki">Tên:</td>
-									<td><input type="text" name="username" /></td>
-								</tr>
-								<tr>
-									<td class="text-align-right font-text-dangki">Emai:</td>
-									<td><input type="email" name="email" /></td>
-								</tr>
-								<tr>
-									<td class="text-align-right font-text-dangki">Password:</td>
-									<td><input type="password" name="password" /></td>
-								</tr>
-								<tr>
-									<td class="text-align-right font-text-dangki">Ngày sinh:</td>
-									<td><input type="date" name="dob" /></td>
-								</tr>
-								<tr>
-									<td class="text-align-right font-text-dangki">Trường:</td>
-									<td><input type="text" name="university" /></td>
-								</tr>
-								<tr>
-									<td class="text-align-right font-text-dangki">Avatar:</td>
-									<td><input type="file" name="avatar"></td>
-								</tr>
-							</table>
+						<div id="marginBottomTopRight10" style="text-align: left:;">
+							<span style="font-size: 24px; color: #115D9D;">THÔNG BÁO
+								ĐĂNG KÝ LỊCH TRAINING</span>
 						</div>
-
-						<div id="div-btn-dang-ky">
-							<button id="btnDangKy" class="btn btn-primary font-text-dangki"
-								type="submit">OK</button>
+						<div id="marginBottomTopRight10" style="text-align: left:;">
+							<span style="font-size: 14px; color: #969696;">04/1/2019</span>
 						</div>
-					</form>
-					<div class="col-md-4">
-				
-			</div>
+						<div id="marginBottomTopRight10" style="text-align: left:;">
+							<span style="font-size: 20px; color: rgba(17, 93, 157, 0.8);">Các
+								bạn đăng ký lịch training trên công ty cho tuần 3/2/2020 đến
+								9/2/2020</span>
+						</div>
+						<div id="marginBottomTopRight10" style="text-align: left:;">
+							<span style="font-size: 20px; color: rgba(43, 43, 43, 0.8);">Các
+								Hi All, anh nhắc lại deadline cho bài Demo cuối của phần
+								training Spring Framework nha. <br /> Deadline nộp bản demo:
+								03rd Feb 2020 (03/02/2020), không trễ quá 11:59pm <br /> Thời
+								gian thuyết trình: 10 - 14/02/2020 <br /> Từ đây đến hết Thứ 5
+								tuần sau (06/02/2020), các bạn update cho anh lịch đi học ở công
+								ty nha cho tuần: 10 - 14/02/2020.
+							</span>
+						</div>
+						<div id="marginBottomTopRight10"
+							style="text-align: left; text-transform: uppercase;">
+							<span
+								style="font-size: 20px; color: rgba(43, 43, 43, 0.8); font-weight: bold; font-style: italic;">
+								THỜI HẠN: </span>
+						</div>
+						<div id="marginBottomTopRight10"
+							style="text-align: left; text-transform: uppercase;">
+
+							<span
+								style="font-size: 20px; color: rgba(43, 43, 43, 0.8); ">
+								11:59 PM 04/1/2019 </span>
+						</div>
+						<div id="marginBottomTopRight10"
+							style="text-align: left; text-transform: uppercase;">
+							<span
+								style="font-size: 20px; color: rgba(43, 43, 43, 0.8); font-weight: bold;font-style: italic;">
+								LƯU Ý: </span>
+						</div>
+						<div id="marginBottomTopRight10" style="text-align: left:;">
+							<span style="font-size: 20px; color: rgba(43, 43, 43, 0.8);">
+								Các bạn cũng chú ý, trong các buổi presentation còn lại
+								ngoài thời gian presentation các topic thì thời gian còn
+								lại các bạn tranh thủ hỏi để đc hộ trợ từ trainer các
+								vấn đề các bạn đang gặp phải khi làm bài Demo. </span>
+						</div>
+						<div id="marginBottomTopRight10"
+							style="text-align: left; text-transform: uppercase;">
+							<span
+								style="font-size: 20px; color: rgba(43, 43, 43, 0.8);font-style: italic;">
+								TRÂN TRỌNG. </span>
+						</div>
+					</div>
 
 				</div>
 			</div>
+
+
+
+
 		</div>
 
-				</div>
 
 
-			</div>
 
-		</div>
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<jsp:include page="footer.jsp" />
 </body>
 </html>

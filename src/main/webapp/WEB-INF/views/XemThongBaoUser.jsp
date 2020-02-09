@@ -25,20 +25,17 @@
 
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active"><a class="nav-link"
-							href="/jwat/themthongbao">Admin<span class="sr-only">(current)</span>
-						</a></li>
-						<li class="nav-item active"><a class="nav-link"
-							href="/jwat/">Thông báo <span class="sr-only">(current)</span>
+							href="/ui/xemthongbaouser">Thông báo <span class="sr-only">(current)</span>
 						</a></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> Lịch </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="/jwat/dangkylichhoc">Đăng ký lịch train</a>
+								<a class="dropdown-item" href="#">Đăng ký lịch train</a>
 
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="/jwat/xemthoikhoabieu">Xem thời
+								<a class="dropdown-item" href="/ui/xemthoikhoabieu">Xem thời
 									khóa biểu</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
@@ -46,7 +43,7 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> Trang </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="/jwat/taikhoan">Tài khoản</a>
+								<a class="dropdown-item" href="/ui/taikhoan">Tài khoản</a>
 
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">Đăng xuất</a>

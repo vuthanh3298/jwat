@@ -1,5 +1,5 @@
 package entity;
-// Generated Feb 4, 2020, 5:29:55 PM by Hibernate Tools 4.3.5.Final
+// Generated Feb 7, 2020, 11:04:24 PM by Hibernate Tools 4.3.5.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -11,23 +11,23 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class RegistrationId implements java.io.Serializable {
 
-	private int idUser;
+	private String idUser;
 	private Date date;
 
 	public RegistrationId() {
 	}
 
-	public RegistrationId(int idUser, Date date) {
+	public RegistrationId(String idUser, Date date) {
 		this.idUser = idUser;
 		this.date = date;
 	}
 
-	@Column(name = "id_user", nullable = false)
-	public int getIdUser() {
+	@Column(name = "id_user", nullable = false, length = 100)
+	public String getIdUser() {
 		return this.idUser;
 	}
 
-	public void setIdUser(int idUser) {
+	public void setIdUser(String idUser) {
 		this.idUser = idUser;
 	}
 
@@ -49,7 +49,8 @@ public class RegistrationId implements java.io.Serializable {
 			return false;
 		RegistrationId castOther = (RegistrationId) other;
 
-		return (this.getIdUser() == castOther.getIdUser())
+		return ((this.getIdUser() == castOther.getIdUser()) || (this.getIdUser() != null
+				&& castOther.getIdUser() != null && this.getIdUser().equals(castOther.getIdUser())))
 				&& ((this.getDate() == castOther.getDate()) || (this.getDate() != null && castOther.getDate() != null
 						&& this.getDate().equals(castOther.getDate())));
 	}
@@ -57,7 +58,7 @@ public class RegistrationId implements java.io.Serializable {
 	public int hashCode() {
 		int result = 17;
 
-		result = 37 * result + this.getIdUser();
+		result = 37 * result + (getIdUser() == null ? 0 : this.getIdUser().hashCode());
 		result = 37 * result + (getDate() == null ? 0 : this.getDate().hashCode());
 		return result;
 	}

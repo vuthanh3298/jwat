@@ -90,19 +90,21 @@
 					<li
 						class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
 						<div>
-							<a href="/jwat/xemthongtindangkylich" style="color: black;">XEM THÔNG TIN ĐĂNG KÝ LỊCH</a>
+							<a href="/jwat/soanlich" style="color: black;">SOẠN THỜI KHOÁ BIỂU</a>
 						</div>
 					</li>
 					<li
 						class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
 						<div>
-							<a href="/jwat/themtaikhoanmoi" style="color: black;">THÊM TÀI KHOẢN MỚI</a>
+							<a href="/jwat/xemthongtindangkylich" style="color: black;">XEM
+								THÔNG TIN ĐĂNG KÝ LỊCH</a>
 						</div>
 					</li>
 					<li
 						class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
 						<div>
-							<a href="/jwat/taikhoanchoduyet" style="color: black;">TÀI KHOẢN CHỜ DUYỆT</a>
+							<a href="/jwat/taikhoanchoduyet" style="color: black;">TÀI
+								KHOẢN CHỜ DUYỆT</a>
 						</div>
 					</li>
 					<li
